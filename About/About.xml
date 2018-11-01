@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Persistent Float Menus</name>
+	<author>Dingo</author>
+	<url>https://ludeon.com/forums/index.php?topic=26077</url>
+	<targetVersion>1.0.2059</targetVersion>
+	<description>Lets you move the mouse cursor farther from float menus before they close.
+
+Distance can be customised using the Mod Settings menu.</description>
+</ModMetaData>

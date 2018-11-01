@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- Mod option - mouse units away from menu before it closes -->
+
+	<PFM.ModifiedDistanceToClose>Max mouse distance from float menu (Default: 300)</PFM.ModifiedDistanceToClose>
+	<PFM.ModifiedDistanceToClose.Tooltip>Float menus close if the mouse strays too far from them. This is the maximum allowed distance.\n\nHigher values - you can move the mouse farther away before the menu closes.\n\nValues below 95 are not recommended.</PFM.ModifiedDistanceToClose.Tooltip>
+
+</LanguageData>
