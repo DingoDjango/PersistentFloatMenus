@@ -8,6 +8,10 @@ Float menus (right-click menus) close automatically if the mouse cursor strays t
 
 This mod lets you set the maximum allowed cursor distance. The higher the value, the farther away you can move the cursor before the float menu closes.
 
+![Notes](https://i.imgur.com/GSbppLC.png)
+
+To change the value used by the mod, simply go to the Mod Settings menu under RimWorld's Options menu.
+
 Values below 95 are not recommended, as that is the vanilla limit. The mod defaults to 300.
 
 ![Credits](https://i.imgur.com/M5vIOEd.png)
