@@ -2,6 +2,6 @@
 <Manifest>
 	<identifier>PersistentFloatMenus</identifier>
 	<version>1.0.2059.1</version>
-	<manifestUri>https://github.com/DingoDjango/PersistentFloatMenus/tree/master/About/Manifest.xml</manifestUri>
+	<manifestUri>https://raw.githubusercontent.com/DingoDjango/PersistentFloatMenus/master/About/Manifest.xml</manifestUri>
 	<downloadUri>https://github.com/DingoDjango/PersistentFloatMenus/releases/latest</downloadUri>
 </Manifest>
