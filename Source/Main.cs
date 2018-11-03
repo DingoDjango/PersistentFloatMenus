@@ -14,7 +14,7 @@ namespace PersistentFloatMenus
 		{
 			base.DoSettingsWindowContents(inRect);
 
-			Settings.DoSettingsWindowContents(inRect);
+			Settings.DoSettingsWindowContents(inRect.LeftPart(0.75f));
 		}
 
 		public override string SettingsCategory()
