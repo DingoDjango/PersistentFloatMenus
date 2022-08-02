@@ -17,32 +17,32 @@ namespace Persistent_Float_Menus
 			Harmony.DEBUG = true;
 #endif
 
-			Harmony harmony = new Harmony("dingo.persistentfloatmenus");
+			Harmony harmony = new Harmony("dingo.rimworld.persistent_float_menus");
 
-			harmony.PatchAll(Assembly.GetExecutingAssembly());
+			// Patch: Verse.FloatMenu.UpdateBaseColor
+			harmony.Patch(
+				original: AccessTools.Method(typeof(FloatMenu), "UpdateBaseColor"),
+				transpiler: new HarmonyMethod(typeof(HarmonyPatches), nameof(HarmonyPatches.Patch_UpdateBaseColor_Transpiler)));			
 		}
 
-		[HarmonyPatch(typeof(FloatMenu))]
-		[HarmonyPatch("UpdateBaseColor")]
-		public static class Patch_Transpiler_FloatMenu
+		public static IEnumerable<CodeInstruction> Patch_UpdateBaseColor_Transpiler(IEnumerable<CodeInstruction> instructions)
 		{
-			public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+			foreach (CodeInstruction code in instructions)
 			{
-				foreach (CodeInstruction code in instructions)
+				// ldc.r4 - Pushes a supplied value of type float32 onto the evaluation stack as type float
+				// Vanilla compares to 95f a few times (FadeFinish minus FadeStart)
+				if (code.opcode == OpCodes.Ldc_R4 && (float)code.operand == Settings.DefaultClosingMouseDist)
 				{
-					// ldc.r4 - Pushes a supplied value of type float32 onto the evaluation stack as type float
-					if (code.opcode == OpCodes.Ldc_R4 && (float)code.operand == Settings.DefaultClosingMouseDist)
-					{
-						// ldsfld - Pushes the value of a static field onto the evaluation stack
-						CodeInstruction replacement = new CodeInstruction(OpCodes.Ldsfld, GetModifiedDistanceToClose);
+					// ldsfld - Pushes the value of a static field onto the evaluation stack
+					// Tell the game to defer to our distance value (from Settings)
+					CodeInstruction replacement = new CodeInstruction(OpCodes.Ldsfld, GetModifiedDistanceToClose);
 
-						yield return replacement;
-					}
+					yield return replacement;
+				}
 
-					else
-					{
-						yield return code;
-					}
+				else
+				{
+					yield return code;
 				}
 			}
 		}
