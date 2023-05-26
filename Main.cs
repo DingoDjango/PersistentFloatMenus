@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Linq;
-using RimWorld;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
 
 namespace Persistent_Float_Menus
 {
-	public class Main : Mod
+    public class Main : Mod
 	{
 		public Main(ModContentPack content) : base(content)
 		{

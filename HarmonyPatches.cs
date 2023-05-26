@@ -13,10 +13,6 @@ namespace Persistent_Float_Menus
 
 		static HarmonyPatches()
 		{
-#if DEBUG
-			Harmony.DEBUG = true;
-#endif
-
 			Harmony harmony = new Harmony("dingo.rimworld.persistent_float_menus");
 
 			// Patch: Verse.FloatMenu.UpdateBaseColor

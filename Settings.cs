@@ -1,15 +1,10 @@
 ﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 
 namespace Persistent_Float_Menus
 {
-	public class Settings : ModSettings
+    public class Settings : ModSettings
 	{
 		private static string modifiedDistanceTextBuffer = "300"; // Unsaved
 
