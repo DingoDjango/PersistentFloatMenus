@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+﻿// using HarmonyLib;
 using UnityEngine;
 using Verse;
 
@@ -8,7 +8,9 @@ namespace Persistent_Float_Menus
 	{
 		private static string modifiedDistanceTextBuffer = "300"; // Unsaved
 
-		public static readonly float DefaultClosingMouseDist = (float)AccessTools.Field(typeof(FloatMenu), "FadeFinishMouseDist").GetValue(null) - (float)AccessTools.Field(typeof(FloatMenu), "FadeStartMouseDist").GetValue(null);
+		// Old reference before FinishDist got added
+		// public static readonly float DefaultClosingMouseDist = (float)AccessTools.Field(typeof(FloatMenu), "FadeFinishMouseDist").GetValue(null) - (float)AccessTools.Field(typeof(FloatMenu), "FadeStartMouseDist").GetValue(null);
+		public static float DefaultClosingMouseDist => FloatMenu.FinishDistFromStartDist;
 
 		public static float ModifiedDistanceToClose = 300f;
 
